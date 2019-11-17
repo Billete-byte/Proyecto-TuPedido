@@ -1,0 +1,43 @@
+{% extends 'core/base.html' %}
+
+{% block contenido %}
+<fieldset>
+<h2> Registro de clientes </h2>
+<form action="" id="formularioPersonas" method="POST">
+    {% csrf_token %}
+    <label for="">Celular</label>
+     <input type="text" name="txtCelular" id="txtCelular">
+     <br><br>
+    <label for="">Comuna</label>
+    <select name="cboComuna" id="cboComuna">
+        <option value="">Seleccionar</option>
+
+        {% for c in comunas  %}
+        
+        <option value="{{ c.id }}">{{ c.nombreC}}</option>
+        
+        {% endfor %}
+        
+    </select>
+    <br><br>
+    <label for="">Nombre</label>
+    <input type="text" name="txtNombre" id="txtNombre">
+    <br><br>
+    <label for="">Apellido</label>
+    <input type="text" name="txtApellido" id="txtApellido">
+    <br><br>
+    <label for="">FechaNacimiento</label>
+    <input type="number" name="txtFechaN" id="txtFechaN">
+    <br><br>
+    <label for="">Direccion</label>
+    <input type="text" name="txtDireccion" id="txtDireccion">
+    <br><br>
+    <label for="">Correo</label>
+    <input type="text" name="txtCorreo" id="txtCorreo">
+    <br><br>
+    <input type="submit" name="btnAnio" id="btnAnio" value="Guardar">
+    
+    <input type="reset" value="Otro Ingreso">
+</form>
+<h3>{{ mensaje }}</h3>
+{% endblock contenido %}
