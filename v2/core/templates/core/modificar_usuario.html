@@ -1,0 +1,50 @@
+{% extends 'core/base.html' %}
+
+{% block contenido %}
+
+<h2> Modificar cliente </h2>
+<form action="" id="formularioPersonas" method="POST">
+    {% csrf_token %}
+
+    <input type="hidden" name="txtId" id="txtId" value="{{ persona.id}}">
+    
+    <label for="">Celular</label>
+     <input type="text" name="txtCelular" id="txtCelular" value="{{ persona.celular }}">
+     <br>
+    <label for="">Comuna</label>
+    <select name="cboComuna" id="cboComuna">
+        <option value="">Seleccionar</option>
+
+        {% for c in comunas  %}
+        
+        <option 
+        
+        {% if  c.id == persona.comuna.id %}
+        {{'selected'}}
+        {% endif %}
+        
+        value="{{ c.id }}">{{ c.nombreC}}</option>
+        
+        {% endfor %}
+        
+    </select>
+    <br>
+    <label for="">Nombre</label>
+    <input type="text" name="txtNombre" id="txtNombre" value="{{ persona.nombre}}">
+    <br>
+    <label for="">Apellido</label>
+    <input type="text" name="txtApellido" id="txtApellido" value="{{ persona.apellido}}">
+    <br>
+    <label for="">FechaNacimiento</label>
+    <input type="number" name="txtFechaN" id="txtFechaN" value="{{ persona.fecha}}">
+    <br>
+    <label for="">Direccion</label>
+    <input type="text" name="txtDireccion" id="txtDireccion" value="{{ persona.direccion}}">
+    <br>
+    <label for="">Correo</label>
+    <input type="text" name="txtCorreo" id="txtCorreo" value="{{ persona.correo }}">
+    <br>
+    <input type="submit" name="btnAnio" id="btnAnio" value="Modificar">
+</form>
+<h3>{{ mensaje }}</h3>
+{% endblock contenido %}
