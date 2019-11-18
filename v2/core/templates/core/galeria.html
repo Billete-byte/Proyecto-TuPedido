@@ -1,0 +1,16 @@
+{% extends "core/base.html" %}
+
+{% load static %}
+
+{% block contenido %}
+<h1> Articulos </h1>
+<div class="galeria">
+    <a data-fancybox="gallery" href="{% static 'core/img/agua_oxigenada.PNG' %}"><img src="{% static 'core/img/agua_oxigenada.PNG' %}"></a>
+    <a data-fancybox="gallery" href="{% static 'core/img/escoba_clasica.PNG' %}"><img src="{% static 'core/img/escoba_clasica.PNG' %}"></a>
+    <a data-fancybox="gallery" href="{% static 'core/img/guantes_aseo.PNG' %}"><img src="{% static 'core/img/guantes_aseo.PNG' %}"></a>
+    <a data-fancybox="gallery" href="{% static 'core/img/condones.PNG' %}"><img src="{% static 'core/img/condones.PNG' %}"></a>
+    <a data-fancybox="gallery" href="{% static 'core/img/escobillon.PNG' %}"><img src="{% static 'core/img/escobillon.PNG' %}"></a>
+</div>
+
+
+{% endblock contenido %}
