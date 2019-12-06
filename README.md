@@ -4,4 +4,4 @@ Github sobre el Proyecto "TuPedido" para la asignatura Desarrollo Web por Julio 
 Las credenciales son:
 
 Administrador: julio
-Contrasela: 1234
+Contraseña: 1234
