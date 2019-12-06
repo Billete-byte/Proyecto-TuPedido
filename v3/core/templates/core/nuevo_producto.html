@@ -1,0 +1,30 @@
+{% extends 'core/base.html' %}
+
+
+{% load crispy_forms_tags %}
+
+{% block contenido %}
+
+<h2>Nuevo producto </h2>
+
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+    
+            {{ form | crispy }}
+    
+        <div class="float-right">
+                <input type="reset" value="limpiar" class="btn btn-info">
+                <input type="submit" value="guardar" class="btn btn-success">
+        </div>
+    </form>
+
+
+{{mensaje}}
+
+
+
+{% endblock contenido %}
+
+
+
+

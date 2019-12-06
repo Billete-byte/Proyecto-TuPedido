@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title> TuPedido </title>
+
+    {% load static %}
+    {% block css %}
+    
+    {% endblock css %}
+
+    <link rel="stylesheet" href="{% static 'core/css/estilos.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    
+</head>
+<body>
+    <header>
+      
+        <img src="{% static 'core/img/logo.png'%}" alt="Logo" class="logo">
+
+        <nav>
+                <ul>
+                        <li>
+                            <a href="{% url 'home' %}">Inicio</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'galeria' %}">Galeria</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://facebook.com">Contacto</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'listado_productos'%}">Lista de productos</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'nuevo_producto'%}">Agregar producto</a>
+                        </li>
+                        {% if user.is_authenticated %}
+                        
+                        <li>
+                            <a href="#">Usuario: {{ user.username }}</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'logout' %}">Cerrar sesión</a>
+                        </li>
+                        {% else %}
+                        <li>
+                            <a href="{% url 'login' %}">Iniciar sesión</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'registro_usuario' %}">Registrar</a>
+                        </li>
+
+
+                        {% endif %}
+                </ul>   
+        </nav>
+        
+    </header>
+
+    <div id="principal">
+        <br>
+        <div class="container">
+            {% block contenido %}
+        
+            {% endblock contenido %}
+        </div>
+
+       
+        
+        
+    </div>
+
+    <footer class="hide_on_mobile">
+        <div>
+            <img src="{% static 'core/img/logo.png' %}" alt="logo" class="logo_footer">
+        </div>
+        <div>
+            <h4>Redes sociales </h4>
+            <hr>
+            <ul class="redes_sociales">
+            
+                <li><img src="{% static 'core/img/social-twitter.png' %}" alt="twitter"></li>
+                <li><img src="{% static 'core/img/socialfacebook.png' %}" alt="facebook"></li>
+                <li><img src="{% static 'core/img/social-inst.png' %}" alt="instagram"></li>
+            </ul>
+        </div>
+        <div>
+                <h4>Derechos Reservados</h4>
+                <hr>
+                <ul>
+                    <li>Preguntas frecuentes</li>
+                    <li>Centro de Ayuda</li>
+                    <li>Términos de uso</li>
+                </ul>
+        </div>
+        <div>
+                <h4>Desarrollado por: </h4>
+                <hr>
+                <ul>
+                    <li>Julio Córdova</li>
+                    <li>Lucas Rodríguez</li>
+                </ul>
+        </div>
+
+        
+        
+        
+
+
+
+
+
+
+    </footer>
+
+
+    <!--footer mobile-->
+    <footer class="hide_on_desktop">
+        <img src="{% static 'core/img/logo.png' %}" alt="Logo" class="logo_footer_mobile">
+   
+    </footer>
+
+    {% block javascript %}
+    
+    {% endblock javascript %}
+    
+
+   
+    <script src="js/basico.js"></script>
+</body>
+</html>

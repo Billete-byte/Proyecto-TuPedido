@@ -1,0 +1,74 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block css %}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" />
+
+{% endblock css %}
+
+{% block javascript %}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script> 
+
+{% endblock javascript %}
+
+{% block contenido %}
+
+   <div class="contenedor_productos">
+            <h2 class="titulo_contenedor_producto">articulos</h2>
+            {% for p in productos%}
+            <div class="producto">
+                {% if p.imagen %}
+                <img src="{{p.imagen.url}}" alt="Caratula 1">
+                {% else %}
+                <img src="{% static 'core/img/escobillon.jpg' %}" alt="Caratula 1">
+                {% endif %}
+                <div>$3000 pesos</div>
+                <a href="#">Comprar</a>
+            </div>
+            {% endfor %}
+        </div>
+        <br>
+        <div class="contenedor_productos">
+                <h2 class="titulo_contenedor_producto">Artículos en Oferta 40%</h2>
+                <div class="producto">
+                    <img src="{% static 'core/img/escobillon.jpg' %}" alt="Caratula 1">
+                    <a href="#">Ver horarios</a>
+                </div>
+                <div class="producto">
+                    <img src="{% static 'core/img/escobillon.jpg' %}" alt="Caratula 1">
+                    <a href="#">Ver horarios</a>
+                </div>
+                <div class="producto">
+                    <img src="{% static 'core/img/escobillon.jpg' %}" alt="Caratula 1">
+                    <a href="#">Ver horarios</a>
+                </div>
+                <div class="producto">
+                    <img src="{% static 'core/img/condones.jpg' %}" alt="Caratula 1">
+                    <a href="#">Ver horarios</a>
+                </div>
+                <div class="producto">
+                    <img src="{% static 'core/img/condones.jpg' %}" alt="Caratula 1">
+                    <a href="#">Ver horarios</a>
+                </div>
+                <div class="producto">
+                    <img src="{% static 'core/img/condones.jpg' %}" alt="Caratula 1">
+                    <a href="#">Ver horarios</a>
+                </div>
+                <div class="producto">
+                    <img src="{% static 'core/img/agua_oxigenada.jpg' %}" alt="Caratula 1">
+                    <a href="#">Ver horarios</a>
+                </div>
+                <div class="producto">
+                    <img src="{% static 'core/img/agua_oxigenada.jpg' %}" alt="Caratula 1">
+                    <a href="#">Ver horarios</a>
+                </div>
+            </div>
+        
+ 
+    
+
+{% endblock contenido %}
